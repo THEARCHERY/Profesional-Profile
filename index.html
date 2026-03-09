@@ -851,21 +851,28 @@
         
         .screenshots-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 1.5rem;
         }
-        
-        .screenshot-placeholder {
+
+        .screenshot-item {
             width: 100%;
-            aspect-ratio: 16/9;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
             background: rgba(255, 255, 255, 0.03);
-            border: 1px dashed var(--border-light);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* --- Skills Section --- */
@@ -1625,9 +1632,18 @@
                 <div class="detail-section">
                     <h3><i class="ph ph-image"></i> Screenshots</h3>
                     <div class="screenshots-grid">
-                        <!-- REPLACE: Project Detail Screenshots -->
-                        <div class="screenshot-placeholder">Screenshot 1 Placeholder</div>
-                        <div class="screenshot-placeholder">Screenshot 2 Placeholder</div>
+                        <div class="screenshot-item">
+                            <img src="./mc_screenshot_splash.svg" alt="The Morning Club - Splash Screen" />
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="./mc_screenshot_briefing.svg" alt="The Morning Club - Briefing View with Stock Cards" />
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="./mc_screenshot_articles.svg" alt="The Morning Club - Articles & Sentiment Analysis" />
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="./mc_screenshot_metrics.svg" alt="The Morning Club - Company Metrics Dashboard" />
+                        </div>
                     </div>
                 </div>
 
